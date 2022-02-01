@@ -37,3 +37,11 @@ let bmi (name, height, weight) =
   else print_string (name ^ "さんは高度肥満です" ^ "\n");;
 
 bmi ("nagashima", 1.765, 75.5)
+
+let sum_and_diff (x, y) = (x + y, x - y);;
+let f (x, y) = sum_and_diff (x, y);;
+let (sum, diff) = f (10, 20);;
+print_int sum;;
+print_string "\n";;
+print_int diff;;
+print_string "\n";;
