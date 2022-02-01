@@ -28,3 +28,12 @@ let geo_mean (x, y) = sqrt (x *. y);;
 let res = geo_mean (3.0, 4.0);;
 print_float res;;
 print_string "\n";;
+
+let bmi (name, height, weight) =
+  let ind = weight /. (height ** 2.0) in
+  if ind < 18.5 then print_string (name ^ "さんはやせています" ^ "\n")
+  else if ind < 25.0 then print_string (name ^ "さんは標準です" ^ "\n")
+  else if ind < 30.0 then print_string (name ^ "さんは肥満です" ^ "\n")
+  else print_string (name ^ "さんは高度肥満です" ^ "\n");;
+
+bmi ("nagashima", 1.765, 75.5)
