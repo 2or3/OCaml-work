@@ -27,3 +27,22 @@ let fib n =
 let res = fib 50;;
 print_int res;;
 print_string "\n";;
+
+(* even/odd *)
+let rec even n =
+  if n = 0 then true else odd (n - 1)
+and odd n =
+  if n = 0 then false else even (n - 1);;
+
+let res = even 10;;
+print_string (string_of_bool res);;
+print_string "\n";;
+let res = odd 9;;
+print_string (string_of_bool res);;
+print_string "\n";;
+let res = even 11;;
+print_string (string_of_bool res);;
+print_string "\n";;
+let res = odd 8;;
+print_string (string_of_bool res);;
+print_string "\n";;
