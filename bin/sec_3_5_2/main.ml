@@ -18,13 +18,21 @@ let fact n =
 print_int (fact 10);;
 print_string "\n";;
 
-(* practice 3-7 *)
+(* practice 3-7-1 *)
 let pow (x, n) =
   let rec powfact (i, x, res) =
     if i = n then res
     else powfact (i + 1, x, res *. x) in
   powfact (1, x, x);;
 
-print_float (pow (2.2, 3));;
+print_float (pow (5.2, 10));;
 print_string "\n";;
 
+(* practice 3-7-2 *)
+let rec pow (x, n) =
+  if n = 1 then x
+  else if n mod 2 = 0 then pow (x *. x, n / 2)
+  else pow (x *. x, (n - 1) / 2) *. x;;
+
+print_float (pow (5.2, 10));;
+print_string "\n";;
