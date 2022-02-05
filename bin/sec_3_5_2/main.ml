@@ -46,3 +46,12 @@ let iterpow x n =
 
 print_int (iterpow 3 5);;
 print_string "\n";;
+
+(* practice 3-11-1 *)
+let rec gcd n m =
+  if m = 0 then n
+  else if n > m then gcd m (n mod m)
+  else gcd n (m mod n);;
+
+print_int (gcd 3355 2379);;
+print_string "\n";;
