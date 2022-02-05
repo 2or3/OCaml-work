@@ -36,3 +36,13 @@ let rec pow (x, n) =
 
 print_float (pow (5.2, 10));;
 print_string "\n";;
+
+(* practice 3-8 *)
+let iterpow x n =
+  let rec pow res x n =
+    if n = 1 then res
+    else pow (res * x) x (n - 1) in
+  pow x x n;;
+
+print_int (iterpow 3 5);;
+print_string "\n";;
