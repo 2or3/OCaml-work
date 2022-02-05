@@ -65,3 +65,12 @@ print_int (comb 5 3);;
 print_string "\n";;
 
 (* practice 3-11-3 *)
+let iterfib n =
+  let rec fib i a b =
+    if n = 1 then 0
+    else if i = (n - 1) then a
+    else fib (i + 1) b (a + b) in
+  fib 0 0 1;;
+
+print_int (iterfib 15);;
+print_string "\n";;
