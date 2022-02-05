@@ -55,3 +55,13 @@ let rec gcd n m =
 
 print_int (gcd 3355 2379);;
 print_string "\n";;
+
+(* practice 3-11-2 *)
+let rec comb n m =
+  if m = 0 || n = m then 1
+  else comb (n - 1) m + comb (n - 1) (m - 1);;
+
+print_int (comb 5 3);;
+print_string "\n";;
+
+(* practice 3-11-3 *)
