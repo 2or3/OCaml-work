@@ -74,3 +74,15 @@ let iterfib n =
 
 print_int (iterfib 15);;
 print_string "\n";;
+
+(* practice 3-11-4 *)
+let max_ascii s =
+  let diff a b = if a > b then a else b in
+  let rec max_asi i res =
+    let n = String.length s in
+    if i = n then res
+    else max_asi (i + 1) (diff res s.[i]) in
+  max_asi 0 ' ';;
+
+print_char (max_ascii "xabgcdef");;
+print_string "\n";;
