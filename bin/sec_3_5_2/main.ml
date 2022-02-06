@@ -86,3 +86,11 @@ let max_ascii s =
 
 print_char (max_ascii "xabgcdef");;
 print_string "\n";;
+
+(* practice 3-12 *)
+let rec pos n =
+  if n < 0 then 0.0
+  else pos (n - 1) +. 1.0 /. (float_of_int (4 * n + 1)) -. 1.0 /. (float_of_int (4 * n + 3));;
+
+print_float (4. *. pos 5200);;
+print_string "\n";;
