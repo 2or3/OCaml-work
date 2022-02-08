@@ -14,3 +14,14 @@ print_string "\n";;
 print_int (sum_of_cube 5);;
 print_string "\n";;
 
+(* anonymous function *)
+let sum_of_cube n = sum_of ((fun x -> x * x * x), n);;
+let sq5 = ((fun x -> x * x), 5) in
+  print_int (sum_of sq5);;
+
+print_string "\n";;
+print_int (sum_of_cube 5);;
+print_string "\n";;
+
+print_int ((fun x -> x * x) 7);;
+print_string "\n";;
