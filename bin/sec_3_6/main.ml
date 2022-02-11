@@ -38,3 +38,6 @@ print_string "\n";;
 print_string (emphasize "abc");;
 print_string "\n";;
 
+(* prefix operator *)
+print_int (abs ~-3);;
+print_string "\n";;
