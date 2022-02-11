@@ -25,3 +25,16 @@ print_string "\n";;
 
 print_int ((fun x -> x * x) 7);;
 print_string "\n";;
+
+(* currying *)
+let concat (s1, s2) = s1 ^ s2 ^ s1;;
+let concat_curry s1 s2 = s1 ^ s2 ^ s1;;
+(* Same as let concat_curry s1 = fun s2 -> s1 ^ s2 ^ s1;; *)
+let emphasize = concat_curry "_";;
+print_string (concat ("abc", ","));;
+print_string "\n";;
+print_string ((concat_curry "abc") ",");;
+print_string "\n";;
+print_string (emphasize "abc");;
+print_string "\n";;
+
