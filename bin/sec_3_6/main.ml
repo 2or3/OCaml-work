@@ -41,3 +41,9 @@ print_string "\n";;
 (* prefix operator *)
 print_int (abs ~-3);;
 print_string "\n";;
+
+(* infix operator *)
+let (^-^) x y = x * 2 + y * 3;;
+print_int(9 ^-^ 6);;
+print_string "\n";;
+
