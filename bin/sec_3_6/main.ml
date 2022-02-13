@@ -70,3 +70,12 @@ let newton_method f guess = fixpoint (newton_transform f) guess;;
 let square_root a = newton_method (fun x -> x *. x -. a) 1.0;;
 print_float (square_root 5.0);;
 print_string "\n";;
+
+(* practice 3.14 *)
+let rec pow x n =
+  if n = 1 then x
+  else if n mod 2 = 0 then (pow (x *. x)) (n / 2)
+  else (pow (x *. x)) ((n - 1) / 2) *. x;;
+
+print_float (pow 5.2 10);;
+print_string "\n";;
