@@ -79,3 +79,14 @@ let rec pow x n =
 
 print_float (pow 5.2 10);;
 print_string "\n";;
+
+(* practice 3.15 *)
+(* todo
+let integral f a b =
+  let n = 10 in
+  let dx = (b - a) /n in
+  fun x -> (f(x dx) * dx) / 2;;
+
+let trapezoidal f dx =
+    fun a i -> ((f(a + (i - 1) * dx) + f(a + i * dx)) * dx) / 2;;
+*)
