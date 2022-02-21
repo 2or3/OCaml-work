@@ -85,8 +85,8 @@ print_string "\n";;
 let integral f a b =
   let n = 10 in
   let dx = (b - a) /n in
+  let trapezoidal f a i =
+      fun a i -> ((f(a + (i - 1) * dx) + f(a + i * dx)) * dx) / 2;;
   fun x -> (f(x dx) * dx) / 2;;
 
-let trapezoidal f dx =
-    fun a i -> ((f(a + (i - 1) * dx) + f(a + i * dx)) * dx) / 2;;
 *)
