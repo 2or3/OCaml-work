@@ -8,3 +8,14 @@ let rec length l =
 
 print_int (length list);;
 print_string "\n";;
+
+(* append *)
+let rec append l1 l2 =
+  match l1 with
+    [] -> l2
+  | first :: rest -> first :: (append rest l2);;
+
+List.iter (Printf.printf "%d ") (append [1; 2; 5] [2; 3]);;
+print_string "\n";;
+List.iter (Printf.printf "%d ") ([1; 2; 5] @ [2; 3]);;
+print_string "\n";;
