@@ -19,3 +19,14 @@ List.iter (Printf.printf "%d ") (append [1; 2; 5] [2; 3]);;
 print_string "\n";;
 List.iter (Printf.printf "%d ") ([1; 2; 5] @ [2; 3]);;
 print_string "\n";;
+
+(* reverse *)
+let reverse list =
+  let rec rev l1 l2 =
+    match l1 with
+      [] -> l2
+    | first :: rest -> rev rest (first :: l2) in
+  rev list [];;
+
+List.iter (Printf.printf "%d ") (reverse [1; 2; 3; 4; 5]);;
+print_string "\n";;
