@@ -30,3 +30,11 @@ let reverse list =
 
 List.iter (Printf.printf "%d ") (reverse [1; 2; 3; 4; 5]);;
 print_string "\n";;
+
+(* map *)
+let rec map f = function
+    [] -> []
+  | x :: rest -> f x :: map f rest;;
+
+List.iter (Printf.printf "%d ") (map (fun x -> x * x) [1; 2; 3; 4; 5; 6; 7]);;
+print_string "\n";;
