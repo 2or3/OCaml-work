@@ -38,3 +38,23 @@ let rec map f = function
 
 List.iter (Printf.printf "%d ") (map (fun x -> x * x) [1; 2; 3; 4; 5; 6; 7]);;
 print_string "\n";;
+
+(* forall *)
+let rec forall p = function
+    [] -> true
+  | x :: rest -> if p x then forall p rest else false;;
+
+print_string (string_of_bool (forall (fun x -> x > 5) [6; 10; 33]));;
+print_string "\n";;
+print_string (string_of_bool (forall (fun x -> x > 9) [6; 10; 33]));;
+print_string "\n";;
+
+(* exist *)
+let rec exist p = function
+    [] -> false
+  | x :: rest -> if p x then true else exist p rest;;
+
+print_string (string_of_bool (exist (fun x -> x > 34) [6; 10; 33]));;
+print_string "\n";;
+print_string (string_of_bool (exist (fun x -> x > 9) [6; 10; 33]));;
+print_string "\n";;
