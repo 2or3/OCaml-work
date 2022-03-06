@@ -58,3 +58,19 @@ print_string (string_of_bool (exist (fun x -> x > 34) [6; 10; 33]));;
 print_string "\n";;
 print_string (string_of_bool (exist (fun x -> x > 9) [6; 10; 33]));;
 print_string "\n";;
+
+(* fold right *)
+let rec fold_right f l e =
+    match l with
+      [] -> e
+    | x :: rest -> f x (fold_right f rest e)
+  let rec fold_left f e l =
+      match l with
+        [] -> e
+      | x :: rest -> fold_left f (f e x) rest;;
+
+List.iter (Printf.printf "%d ") (fold_left (fun x y -> y :: x) [] [1; 2; 3; 7; 10; 22; 100]);
+print_string "\n";
+
+print_int (fold_right (fun x y -> x + y) [1; 2; 1; 2; 1; 2; 1] 0);
+print_string "\n";
