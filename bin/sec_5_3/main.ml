@@ -69,8 +69,18 @@ let rec fold_right f l e =
         [] -> e
       | x :: rest -> fold_left f (f e x) rest;;
 
-List.iter (Printf.printf "%d ") (fold_left (fun x y -> y :: x) [] [1; 2; 3; 7; 10; 22; 100]);
-print_string "\n";
+List.iter (Printf.printf "%d ") (fold_left (fun x y -> y :: x) [] [1; 2; 3; 7; 10; 22; 100]);;
+print_string "\n";;
 
-print_int (fold_right (fun x y -> x + y) [1; 2; 1; 2; 1; 2; 1] 0);
-print_string "\n";
+print_int (fold_right (fun x y -> x + y) [1; 2; 1; 2; 1; 2; 1] 0);;
+print_string "\n";;
+
+(* nth *)
+let rec nth n l =
+  match (n, l) with
+      (1, a :: _) -> a
+    | (_, _ :: rest) -> nth (n-1) rest
+    | (_, _) -> 0;;
+
+print_int (nth 3 [1; 4; 2; 5; 6; 5]);;
+print_string "\n";;
