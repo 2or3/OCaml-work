@@ -1,0 +1,3 @@
+(executable
+ (public_name practice_6_2)
+ (name main))
